@@ -1,0 +1,51 @@
+{
+  "name": "@bnowak/react-viewstack",
+  "version": "0.0.1",
+  "description": "Simple viewstack with support for animated transitions. Alternative to ReactTransitionGroup with better control over in/out animation direction and transitions effects out of the box.",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "./node_modules/del-cli/cli.js 'dist/*.*' && ./node_modules/.bin/babel src/ --out-file dist/index.js",
+    "test": "npm run lint && npm run testonly"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartlomn/react-viewstack.git"
+  },
+  "keywords": [
+    "viewstack",
+    "view",
+    "stack",
+    "animated",
+    "transitions",
+    "effects",
+    "container"
+  ],
+  "author": "Bart Nowak <bnowak@bnowak.com> (http://bnowak.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bartlomn/react-viewstack/issues"
+  },
+  "homepage": "https://github.com/bartlomn/react-viewstack#readme",
+  "devDependencies": {
+    "babel-cli": "^6.8.0",
+    "babel-plugin-add-module-exports": "^0.2.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "del-cli": "^0.2.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.7 || ^15.0.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.6.1"
+  },
+  "devEngines": {
+    "node": "4.x || 5.x",
+    "npm": "2.x || 3.x"
+  }
+}
