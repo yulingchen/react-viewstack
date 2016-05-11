@@ -6,3 +6,9 @@ Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/an
 
 ## Library format
 Conforming to UMD standard
+
+## Previous work
+Shoutout and thanks to:
+* [@arunoda](https://github.com/arunoda) for
+  * [react-storybook](https://github.com/kadirahq/react-storybook)
+  * [react-storybook-simple-demo](https://github.com/kadira-samples/react-storybook-simple-demo)
