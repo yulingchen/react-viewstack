@@ -1,0 +1,165 @@
+/**
+ * Base view stack styles
+ */
+.transition-wrapper
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  // width: 100%;
+  max-width: 100%;
+  // height: 100%;
+  // position: relative;
+
+  & > li
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+  & > li.current
+    opacity: 1;
+    pointer-events: auto;
+
+  /**
+   * Animation fx styles
+   */
+  &.fortune-wheel
+    perspective: 100vw; /* we want perspective to be equal in pixels to screen width */
+
+    .fxInPrev
+      transform-origin: 0% 50%;
+      animation: rotateInFromRight 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutPrev
+      animation: slideOutScaleLeft 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxInNext
+      transform-origin: 100% 50%;
+      animation: rotateInFromLeft 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutNext
+      animation: slideOutScaleRight 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+  &.fortune-wheel-v
+    perspective: 100vw; /* we want perspective to be equal in pixels to screen width */
+
+    .fxInPrev
+      transform-origin: 0% 50%;
+      animation: rotateInFromBottom 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutPrev
+      animation: slideOutScaleTop 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxInNext
+      transform-origin: 100% 50%;
+      animation: rotateInFromTop 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutNext
+      animation: slideOutScaleBottom 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+  &.fade-through
+
+    .fxInPrev
+      animation: fadeIn 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutPrev
+      animation: fadeOut 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxInNext
+      animation: fadeIn 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutNext
+      animation: fadeOut 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+/**
+ * Animation keyframe definitions
+ */
+@keyframes rotateInFromRight {
+  from {
+    transform: translateX(100%) rotateY(55deg);
+  }
+  to {
+    transform: translateX(0) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInFromLeft {
+  from {
+    transform: translateX(-100%) rotateY(-55deg);
+  }
+  to {
+    transform: translateX(0) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInFromTop {
+  from {
+    transform: translateY(100%) rotateX(55deg);
+  }
+  to {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInFromBottom {
+  from {
+    transform: translateY(-100%) rotateX(-55deg);
+  }
+  to {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutScaleRight {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: translateX(100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutScaleLeft {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: translateX(-100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutScaleBottom {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: translateY(-100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutScaleTop {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    transform: translateY(100%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  to {
+    opacity: 1;
+  }
+}
