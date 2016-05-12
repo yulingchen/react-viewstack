@@ -1,0 +1,28 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react"
+  ],
+  "env"     : {
+    "browser" : true
+  },
+  "globals" : {
+    "Action"       : false,
+    "__DEV__"      : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__DEBUG_NEW_WINDOW__" : false,
+    "__BASENAME__" : false
+  },
+  "rules": {
+    "semi" : [2, "always"],
+    "max-len": [2, 120, 2],
+    "space-infix-ops": 1,
+    "array-bracket-spacing": ["error", "always", { "objectsInArrays": false, "arraysInArrays": false }],
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": false, "arraysInObjects": false }],
+    "computed-property-spacing": ["error", "always"],
+    "block-spacing": ["error", "always"],
+    "space-in-parens": ["error", "always", { "exceptions": [ "{}", "[]", "empty" ]}]
+  }
+}

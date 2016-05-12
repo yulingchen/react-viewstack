@@ -1,12 +1,11 @@
 /* eslint strict: 0 */
 'use strict';
 
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const baseConfig = require('./webpack.config.base');
+const webpack = require( 'webpack' );
+const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const baseConfig = require( './webpack.config.base' );
 
-
-const config = Object.create(baseConfig);
+const config = Object.create( baseConfig );
 
 config.devtool = '#source-map';
 
@@ -44,14 +43,14 @@ config.module.loaders.push({
   // )
 });
 
-config.postcss = [ require('autoprefixer')() ];
+config.postcss = [ require( 'autoprefixer' )() ];
 
 config.plugins.push(
   new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.DefinePlugin({
     __DEV__: false,
     'process.env': {
-      NODE_ENV: JSON.stringify('production')
+      NODE_ENV: JSON.stringify( 'production' )
     }
   }),
   new webpack.optimize.UglifyJsPlugin({
@@ -60,7 +59,7 @@ config.plugins.push(
       warnings: false
     }
   }),
-  new ExtractTextPlugin('ViewStack.css', { allChunks: true })
+  new ExtractTextPlugin( 'ViewStack.css', { allChunks: true })
 );
 
 module.exports = config;
