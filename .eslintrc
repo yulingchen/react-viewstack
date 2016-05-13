@@ -16,13 +16,15 @@
     "__BASENAME__" : false
   },
   "rules": {
-    "semi" : [2, "always"],
-    "max-len": [2, 120, 2],
-    "space-infix-ops": 1,
     "array-bracket-spacing": ["error", "always", { "objectsInArrays": false, "arraysInArrays": false }],
-    "object-curly-spacing": ["error", "always", { "objectsInObjects": false, "arraysInObjects": false }],
-    "computed-property-spacing": ["error", "always"],
     "block-spacing": ["error", "always"],
-    "space-in-parens": ["error", "always", { "exceptions": [ "{}", "[]", "empty" ]}]
+    "computed-property-spacing": ["error", "always"],
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": false, "arraysInObjects": false }],
+    "operator-linebreak": ["error", "after"],
+    "max-len": [2, 120, 2],
+    "semi" : [2, "always"],
+    "space-infix-ops": 1,
+    "space-in-parens": ["error", "always", { "exceptions": [ "{}", "[]", "()", "empty" ]}],
+    "react/jsx-curly-spacing": ["error", "always"]
   }
 }

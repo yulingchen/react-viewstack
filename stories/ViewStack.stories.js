@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf, action } from '@kadira/storybook';
 import ViewStack from './../src/ViewStack';
 
 let colors = [
@@ -9,6 +9,10 @@ let colors = [
 ];
 
 class Wrapper extends Component {
+
+  static propTypes = {
+    fxClass: React.PropTypes.string
+  };
 
   fxInterval = null;
 
@@ -29,34 +33,34 @@ class Wrapper extends Component {
   fxGo = () => {
     this.setState({
       selectedIndex: this.state.selectedIndex < colors.length - 1 ?
-                this.state.selectedIndex + 1 : 0
+        this.state.selectedIndex + 1 : 0
     });
   };
 
   render () {
     return (
-          <ViewStack
-            classNames={this.props.fxClass}
-            selectedIndex={this.state.selectedIndex}
-            onFxStart={() => { null; }}
-            onFxEnd={() => { null; }}
-            style={{ width: '400px', height: '300px' }}
-              >
-              {colors.map( ( color, idx ) =>
-                  <div style={{ width: '400px', height: '300px', backgroundColor: color }} key={idx}>{idx}</div>
-              )}
-          </ViewStack>
-        );
+      <ViewStack
+        classNames={ this.props.fxClass }
+        selectedIndex={ this.state.selectedIndex }
+        onFxStart={ action( 'transition started' ) }
+        onFxEnd={ action( 'transition finished' ) }
+        style={ { width: '400px', height: '300px' } }
+          >
+          { colors.map(( color, idx ) =>
+            <div style={ { width: '400px', height: '300px', backgroundColor: color } } key={ idx }>{ idx }</div>
+          ) }
+      </ViewStack>
+    );
   }
 }
 
 storiesOf( 'ViewStack', module )
   .add( 'with fade-through', () => (
-      <Wrapper fxClass='fade-through' />
-  ) )
+    <Wrapper fxClass='fade-through' />
+  ))
   .add( 'with fortune-wheel vertical', () => (
-      <Wrapper fxClass='fortune-wheel-v' />
-  ) )
+    <Wrapper fxClass='fortune-wheel-v' />
+  ))
   .add( 'with fortune-wheel horizontal', () => (
-      <Wrapper fxClass='fortune-wheel' />
-  ) );
+    <Wrapper fxClass='fortune-wheel' />
+  ));

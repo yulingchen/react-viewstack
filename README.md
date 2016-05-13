@@ -11,6 +11,9 @@ Checkout, install npm dependencies, then
 * `npm run build` to compile  a dist version
 * `npm run dev` to start a dev server with storybook environment on port `9001`
 
+### For consumption
+- [ ] Todo
+
 
 ## Library format
 Conforming to CommonJS format
@@ -18,11 +21,16 @@ Conforming to CommonJS format
 ## Todo
 - [x] Describe usage
 - [x] Add esLint
-- [ ] Fix lint errors
+- [x] Fix lint errors
 - [ ] Add tests
 - [ ] Use extract-text-plugin to provide separate stylesheet
 - [ ] Use css modules to prevent global scope pollution
 - [ ] Use animation events as detailed [here](http://facebook.github.io/react/docs/events.html#animation-events)
+- [ ] Add more transition effects
+- [ ] Better visualisation in storybook
+- [ ] Better readme
+- [ ] Publish on NPM
+- [ ] Promote
 
 ## Previous work
 Shoutout and thanks to:

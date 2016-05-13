@@ -6,8 +6,8 @@
   "scripts": {
     "build": "better-npm-run compile",
     "dev": "better-npm-run develop",
-    "lint": "./node_modules/eslint/bin/eslint.js .",
-    "lint:fix": "./node_modules/eslint/bin/eslint.js . -- --fix",
+    "lint": "./node_modules/eslint/bin/eslint.js . || true",
+    "lint:fix": "./node_modules/eslint/bin/eslint.js . -- --fix || true",
     "test": "npm run lint && npm run testonly"
   },
   "betterScripts": {
@@ -18,9 +18,9 @@
       }
     },
     "develop": {
-      "command": "start-storybook -p 9001",
+      "command": "start-storybook -p 9001 && ./node_modules/opn-cli/cli.js 'http://localhost:9001'",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "development"
       }
     }
   },
