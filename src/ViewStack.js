@@ -9,7 +9,7 @@ export default class ViewStack extends Component {
    * Default component css classses
    * @type {String}
    */
-  static defaultClassNames = 'molecule view-stack';
+  static defaultClassNames = 'view-stack';
 
   /**
    * Default animation css classses
