@@ -7,9 +7,13 @@ Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/an
 ## Usage
 
 ### For development
-Checkout, install npm dependencies, then
+Checkout, install npm dependencies, then you have available scripts:
 * `npm run build` to compile  a dist version
 * `npm run dev` to start a dev server with storybook environment on port `9001`
+* `npm run lint` to pass esLint over the code
+* `npm run lint:fix` to correct fixable lint errors
+* `npm run test` for a single pass of linter and tests
+* `npm run test:watch` for a continous test mode
 
 ### For consumption
 - [ ] Todo
@@ -22,7 +26,7 @@ Conforming to CommonJS format
 - [x] Describe usage
 - [x] Add esLint
 - [x] Fix lint errors
-- [ ] Add tests
+- [ ] Add tests [WIP]
 - [ ] Use extract-text-plugin to provide separate stylesheet
 - [ ] Use css modules to prevent global scope pollution
 - [ ] Use animation events as detailed [here](http://facebook.github.io/react/docs/events.html#animation-events)
