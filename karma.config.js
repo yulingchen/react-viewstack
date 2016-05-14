@@ -2,18 +2,27 @@ var webpack = require( 'karma-webpack' );
 
 module.exports = function ( config ) {
   config.set({
-    frameworks: [ 'jasmine' ],
+    colors: true,
+    logLevel: config.LOG_INFO,
+    frameworks: [ 'mocha', 'chai' ],
     files: [
       './node_modules/phantomjs-polyfill/bind-polyfill.js',
       'tests/**/*_spec.js'
     ],
-    plugins: [ webpack, 'karma-jasmine', 'karma-phantomjs-launcher', 'karma-coverage', 'karma-spec-reporter' ],
+    plugins: [
+      webpack,
+      'karma-mocha',
+      'karma-chai',
+      'karma-phantomjs-launcher',
+      'karma-coverage',
+      'karma-nyan-reporter'
+    ],
     browsers: [ 'PhantomJS' ],
     preprocessors: {
       'tests/**/*_spec.js': [ 'webpack' ],
       'src/**/*.js': [ 'webpack' ]
     },
-    reporters: [ 'spec', 'coverage' ],
+    reporters: [ 'coverage', 'nyan' ],
     coverageReporter: {
       dir: 'dist/reports/coverage',
       reporters: [
@@ -23,15 +32,31 @@ module.exports = function ( config ) {
       ]
     },
     webpack: {
+      devtool: 'inline-source-map',
       module: {
         loaders: [{
           test: /\.(js|jsx)$/, exclude: /(dist|node_modules)/,
-          loader: 'babel-loader'
+          loader: 'babel'
+        },
+        {
+          test: /\.styl$/,
+          loaders: [
+            'style',
+            'css',
+            'postcss',
+            'stylus'
+          ]
         }],
         postLoaders: [{
           test: /\.(js|jsx)$/, exclude: /(node_modules|dist|tests)/,
           loader: 'istanbul-instrumenter'
         }]
+      },
+      externals: {
+        'cheerio': 'window',
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
       }
     },
     webpackMiddleware: { noInfo: true }
