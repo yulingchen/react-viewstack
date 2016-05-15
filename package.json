@@ -8,7 +8,7 @@
     "clean": "better-npm-run clean",
     "coverage:report": "better-npm-run coverage:report",
     "dev": "better-npm-run develop",
-    "lint": "./node_modules/eslint-cli/bin/eslint.js . || true",
+    "lint": "./node_modules/eslint-cli/bin/eslint.js .",
     "lint:fix": "./node_modules/eslint-cli/bin/eslint.js . --fix || true",
     "test": "npm run lint && better-npm-run test",
     "test:watch": "better-npm-run test:watch"

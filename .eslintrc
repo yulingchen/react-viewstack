@@ -26,6 +26,7 @@
     "semi" : [2, "always"],
     "space-infix-ops": 1,
     "space-in-parens": ["error", "always", { "exceptions": [ "{}", "[]", "()", "empty" ]}],
-    "react/jsx-curly-spacing": ["error", "always"]
+    "react/jsx-curly-spacing": ["error", "always"],
+    "template-curly-spacing": ["error", "always"]
   }
 }
