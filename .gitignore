@@ -90,3 +90,6 @@ sftp-config.json
 ### Vagrant ###
 .vagrant/
 
+### Project specfic ###
+dist/
+

@@ -15,17 +15,18 @@ module.exports = function ( config ) {
       'karma-chai',
       'karma-phantomjs-launcher',
       'karma-coverage',
-      'karma-nyan-reporter'
+      'karma-mocha-reporter'
     ],
     browsers: [ 'PhantomJS' ],
     preprocessors: {
       'tests/**/*_spec.js': [ 'webpack' ],
       'src/**/*.js': [ 'webpack' ]
     },
-    reporters: [ 'coverage', 'nyan' ],
+    reporters: [ 'coverage', 'mocha' ],
     coverageReporter: {
       dir: 'dist/reports/coverage',
       reporters: [
+        { type: 'text-summary' },
         { type: 'html', subdir: 'report-html' },
         { type: 'lcov', subdir: 'report-lcov' },
         { type: 'cobertura', subdir: '.', file: 'cobertura.txt' }
@@ -47,9 +48,9 @@ module.exports = function ( config ) {
             'stylus'
           ]
         }],
-        postLoaders: [{
+        preLoaders: [{
           test: /\.(js|jsx)$/, exclude: /(node_modules|dist|tests)/,
-          loader: 'istanbul-instrumenter'
+          loader: 'isparta'
         }]
       },
       externals: {

@@ -8,7 +8,9 @@ Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/an
 
 ### For development
 Checkout, install npm dependencies, then you have available scripts:
-* `npm run build` to compile  a dist version
+* `npm run build` to compile a dist version
+* `npm run clean` to clean dist directory
+* `npm run coverage:report` to view code coverage report on port `9002`
 * `npm run dev` to start a dev server with storybook environment on port `9001`
 * `npm run lint` to pass esLint over the code
 * `npm run lint:fix` to correct fixable lint errors
@@ -22,11 +24,18 @@ Checkout, install npm dependencies, then you have available scripts:
 ## Library format
 Conforming to CommonJS format
 
+## Handy urls
+### Testing APIs in use:
+* https://github.com/producthunt/chai-enzyme
+* https://github.com/domenic/sinon-chai 
+
 ## Todo
 - [x] Describe usage
 - [x] Add esLint
 - [x] Fix lint errors
-- [ ] Add tests [WIP]
+- [x] Add tests
+- [ ] Better tests
+- [ ] Better coverage
 - [ ] Use extract-text-plugin to provide separate stylesheet
 - [ ] Use css modules to prevent global scope pollution
 - [ ] Use animation events as detailed [here](http://facebook.github.io/react/docs/events.html#animation-events)
@@ -41,3 +50,4 @@ Shoutout and thanks to:
 * [@arunoda](https://github.com/arunoda) for
   * [react-storybook](https://github.com/kadirahq/react-storybook)
   * [react-storybook-simple-demo](https://github.com/kadira-samples/react-storybook-simple-demo)
+  * Being source of inspiration on how to develop react components in isolation
