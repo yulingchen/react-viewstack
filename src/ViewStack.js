@@ -95,6 +95,16 @@ export default class ViewStack extends Component {
   }
 
   /**
+   * invoked immediately before a component is unmounted from the DOM
+   * @return {void}
+   */
+  componentWillUnmount () {
+    if ( this.state.fxInProgress ) {
+      this.transitionEnd();
+    }
+  }
+
+  /**
    * invoked when component is receiving props, not for initial 'render'
    * @param  {object} nextProps next component props
    * @return {void}
@@ -133,8 +143,10 @@ export default class ViewStack extends Component {
    * @return {void}
    */
   transitionEnd = () => {
-    window.clearTimeout( this.fxTimeout );
-    this.fxTimeout = null;
+    if ( this.fxTimeout ) {
+      window.clearTimeout( this.fxTimeout );
+      this.fxTimeout = null;
+    }
 
     if ( this.props.onFxEnd ) {
       this.props.onFxEnd();

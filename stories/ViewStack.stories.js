@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import ViewStack from './../src/ViewStack';
 
-let colors = [
-  '#FF0000',
-  '#00FF00',
-  '#0000FF'
+let sources = [
+  'http://lorempixel.com/640/480/cats/',
+  'http://lorempixel.com/640/480/nature/',
+  'http://lorempixel.com/640/480/nightlife/'
 ];
 
 class Wrapper extends Component {
@@ -32,7 +32,7 @@ class Wrapper extends Component {
 
   fxGo = () => {
     this.setState({
-      selectedIndex: this.state.selectedIndex < colors.length - 1 ?
+      selectedIndex: this.state.selectedIndex < sources.length - 1 ?
         this.state.selectedIndex + 1 : 0
     });
   };
@@ -44,10 +44,10 @@ class Wrapper extends Component {
         selectedIndex={ this.state.selectedIndex }
         onFxStart={ action( 'transition started' ) }
         onFxEnd={ action( 'transition finished' ) }
-        style={ { width: '400px', height: '300px' } }
+        style={ { width: '640px', height: '480px' } }
           >
-          { colors.map(( color, idx ) =>
-            <div style={ { width: '400px', height: '300px', backgroundColor: color } } key={ idx }>{ idx }</div>
+          { sources.map(( strSource, idx ) =>
+            <img src={ strSource } key={ idx } />
           ) }
       </ViewStack>
     );
