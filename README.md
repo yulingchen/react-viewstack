@@ -2,7 +2,7 @@
 # React ViewStack
 
 Simple viewstack with support for animated transitions.
-Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/animation.html) with better control over in/out animation direction and transition effects out of the box.
+Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/animation.html) with better control over in/out animation direction and transition effects out of the box. Like a (much) simpler version of [FullPage.js](http://alvarotrigo.com/fullPage/) written in react.
 
 ## Usage
 
@@ -44,6 +44,9 @@ Conforming to CommonJS format
 - [ ] Better readme
 - [ ] Publish on NPM
 - [ ] Promote
+
+## Contributing
+* Make sure your IDE supports [.editorconfig](http://editorconfig.org/)
 
 ## Previous work
 Shoutout and thanks to:

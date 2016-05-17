@@ -59,7 +59,8 @@
     "animated",
     "transitions",
     "effects",
-    "container"
+    "container",
+    "fullpage"
   ],
   "author": "Bart Nowak <bnowak@bnowak.com> (http://bnowak.com)",
   "license": "MIT",
