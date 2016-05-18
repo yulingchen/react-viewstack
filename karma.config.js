@@ -40,12 +40,12 @@ module.exports = function ( config ) {
           loader: 'babel'
         },
         {
-          test: /\.styl$/,
+          test: /\.(scss|sass)$/,
           loaders: [
             'style',
-            'css',
-            'postcss',
-            'stylus'
+            'css?sourceMap',
+            'postcss?sourceMap',
+            'sass?sourceMap'
           ]
         }],
         preLoaders: [{

@@ -1,4 +1,4 @@
-require( './view-stack.styl' );
+require( './view-stack.scss' );
 
 import React, { Component } from 'react';
 import classnames from 'classnames';

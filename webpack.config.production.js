@@ -14,32 +14,19 @@ config.entry = './src/ViewStack';
 config.output.publicPath = '../dist/';
 
 config.module.loaders.push({
-  test: /\.css(\?\S*)?$/,
+  test: /\.(scss|sass)$/,
   loaders: [
     'style',
-    'css'
-  ]
-  // loader: ExtractTextPlugin.extract(
-  //   'style-loader',
-  //   'css-loader'
-  //   // 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-  // )
-});
-
-config.module.loaders.push({
-  test: /\.styl$/,
-  loaders: [
-    'style',
-    'css',
-    'postcss',
-    'stylus'
+    'css?sourceMap',
+    'postcss?sourceMap',
+    'sass?sourceMap'
   ]
   // loader: ExtractTextPlugin.extract(
   //   'style-loader',
   //   'css-loader',
   //   // 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
   //   'postcss-loader',
-  //   'stylus-loader'
+  //   'sass-loader'
   // )
 });
 
