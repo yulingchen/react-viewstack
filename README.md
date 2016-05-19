@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/bartlomn/react-viewstack/tree/develop.svg?style=svg)](https://circleci.com/gh/bartlomn/react-viewstack/tree/develop)
 
 # React ViewStack
 
