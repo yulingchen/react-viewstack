@@ -30,54 +30,61 @@
    */
   &.fortune-wheel {
     perspective: 100vw; /* we want perspective to be equal in pixels to screen width */
-
     .fxInPrev {
       transform-origin: 0% 50%;
-      animation: rotateInFromRight 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: rotateInFromRight 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxOutPrev {
-      animation: slideOutScaleLeft 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: slideOutScaleLeft 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxInNext {
       transform-origin: 100% 50%;
-      animation: rotateInFromLeft 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: rotateInFromLeft 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxOutNext {
-      animation: slideOutScaleRight 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: slideOutScaleRight 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
   }
 
   &.fortune-wheel-v {
     perspective: 100vw; /* we want perspective to be equal in pixels to screen width */
-
     .fxInPrev {
       transform-origin: 0% 50%;
-      animation: rotateInFromBottom 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: rotateInFromBottom 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxOutPrev {
-      animation: slideOutScaleTop 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: slideOutScaleTop 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxInNext {
       transform-origin: 100% 50%;
-      animation: rotateInFromTop 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: rotateInFromTop 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxOutNext {
-      animation: slideOutScaleBottom 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: slideOutScaleBottom 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
   }
 
   &.fade-through {
     .fxInPrev {
-      animation: fadeIn 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: fadeIn 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
-    .fxOutPrev{
-      animation: fadeOut 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+
+    .fxOutPrev {
+      animation: fadeOut 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxInNext {
-      animation: fadeIn 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: fadeIn 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
+
     .fxOutNext {
-      animation: fadeOut 1s forwards cubic-bezier(0.7, 0, 0.3, 1);
+      animation: fadeOut 1s forwards cubic-bezier( 0.7, 0, 0.3, 1 );
     }
   }
 }
@@ -87,84 +94,107 @@
  */
 @keyframes rotateInFromRight {
   from {
-    transform: translateX(100%) rotateY(55deg);
+    transform: translateX( 100% ) rotateY( 55deg );
   }
+
   to {
-    transform: translateX(0) rotateY(0deg);
+    transform: translateX( 0 ) rotateY( 0deg );
     opacity: 1;
   }
 }
 
 @keyframes rotateInFromLeft {
   from {
-    transform: translateX(-100%) rotateY(-55deg);
+    transform: translateX( -100% ) rotateY( -55deg );
   }
+
   to {
-    transform: translateX(0) rotateY(0deg);
+    transform: translateX( 0 ) rotateY( 0deg );
     opacity: 1;
   }
 }
 
 @keyframes rotateInFromTop {
   from {
-    transform: translateY(100%) rotateX(55deg);
+    transform: translateY( 100% ) rotateX( 55deg );
   }
+
   to {
-    transform: translateY(0) rotateX(0deg);
+    transform: translateY( 0 ) rotateX( 0deg );
     opacity: 1;
   }
 }
 
 @keyframes rotateInFromBottom {
   from {
-    transform: translateY(-100%) rotateX(-55deg);
+    transform: translateY( -100% ) rotateX( -55deg );
   }
+
   to {
-    transform: translateY(0) rotateX(0deg);
+    transform: translateY( 0 ) rotateX( 0deg );
     opacity: 1;
   }
 }
 
 @keyframes slideOutScaleRight {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
-    transform: translateX(100%) scale(0.9);
+    transform: translateX( 100% ) scale( 0.9 );
     opacity: 0;
   }
 }
 
 @keyframes slideOutScaleLeft {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
-    transform: translateX(-100%) scale(0.9);
+    transform: translateX( -100% ) scale( 0.9 );
     opacity: 0;
   }
 }
 
 @keyframes slideOutScaleBottom {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
-    transform: translateY(-100%) scale(0.9);
+    transform: translateY( -100% ) scale( 0.9 );
     opacity: 0;
   }
 }
 
 @keyframes slideOutScaleTop {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
-    transform: translateY(100%) scale(0.9);
+    transform: translateY( 100% ) scale( 0.9 );
     opacity: 0;
   }
 }
 
 @keyframes fadeOut {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
     opacity: 0;
   }
 }
+
 @keyframes fadeIn {
-  from {} /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  /* Fixes Chrome issue 35.0.1916.114 (easing breaks) */
+  from {
+  }
+
   to {
     opacity: 1;
   }

@@ -8,13 +8,17 @@ Alternative to [ReactCSSTransitionGroup](http://facebook.github.io/react/docs/an
 
 ### For development
 Checkout, install npm dependencies, then you have available scripts:
-* `npm run build` to compile a dist version
+* `npm run build` to build (clean+lint+test+compile) a dist version
+* `npm run compile` to compile a dist version
 * `npm run clean` to clean dist directory
 * `npm run coverage:report` to view code coverage report on port `9002`
 * `npm run dev` to start a dev server with storybook environment on port `9001`
-* `npm run lint` to pass esLint over the code
-* `npm run lint:fix` to correct fixable lint errors
-* `npm run test` for a single pass of linter and tests
+* `npm run lint` to lint both js and styles
+* `npm run lint:js` to pass [esLint](http://eslint.org/) over the code
+* `npm run lint:js:fix` to correct fixable js lint errors
+* `npm run lint:css` to pass [stylelint](http://stylelint.io/) over the code
+* `npm run lint:css:fix` to correct fixable style lint errors - using [stylefmt](https://github.com/morishitter/stylefmt)
+* `npm run test` for a single pass of tests
 * `npm run test:watch` for a continous test mode
 
 ### For consumption
@@ -27,13 +31,15 @@ Conforming to CommonJS format
 ## Handy urls
 ### Testing APIs in use:
 * https://github.com/producthunt/chai-enzyme
-* https://github.com/domenic/sinon-chai 
+* https://github.com/domenic/sinon-chai
 
 ## Todo
 - [x] Describe usage
 - [x] Add esLint
+- [x] Add stylelint
 - [x] Fix lint errors
 - [x] Add tests
+- [ ] Dedupe webpack configs for prod/tests/storybook
 - [ ] Better tests
 - [ ] Better coverage
 - [ ] Use extract-text-plugin to provide separate stylesheet

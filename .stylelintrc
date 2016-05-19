@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "block-no-empty": null,
+    "function-parentheses-space-inside": "always-single-line"
+  }
+}

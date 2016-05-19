@@ -4,24 +4,34 @@
   "description": "Simple viewstack with support for animated transitions. Alternative to ReactTransitionGroup with better control over in/out animation direction and transitions effects out of the box.",
   "main": "dist/index.js",
   "scripts": {
-    "build": "better-npm-run compile",
+    "build": "better-npm-run build",
     "clean": "better-npm-run clean",
+    "compile": "better-npm-run compile",
     "coverage:report": "better-npm-run coverage:report",
     "dev": "better-npm-run develop",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix || true",
-    "test": "npm run lint && better-npm-run test",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix || true",
+    "lint:css": "./node_modules/stylelint/dist/cli.js './src/**/*.scss' --syntax scss",
+    "lint:css:fix": "./node_modules/stylefmt/bin/cli.js ./src/view-stack.scss",
+    "test": "better-npm-run test",
     "test:watch": "better-npm-run test:watch"
   },
   "betterScripts": {
     "compile": {
-      "command": "npm run clean && npm test && ./node_modules/webpack/bin/webpack.js --config webpack.config.production.js --progress",
+      "command": "./node_modules/webpack/bin/webpack.js --config webpack.config.production.js --progress",
       "env": {
         "NODE_ENV": "production"
       }
     },
     "clean": {
       "command": "./node_modules/del-cli/cli.js 'dist/**'"
+    },
+    "build": {
+      "command": "npm run clean && npm run lint && npm test && npm run compile",
+      "env": {
+        "NODE_ENV": "production"
+      }
     },
     "develop": {
       "command": "start-storybook -p 9001",
@@ -118,6 +128,9 @@
     "sass-loader": "^3.2.0",
     "sinon": "^1.17.4",
     "style-loader": "^0.13.1",
+    "stylefmt": "^3.2.1",
+    "stylelint": "^6.4.1",
+    "stylelint-config-standard": "^7.0.0",
     "webpack": "^1.13.0"
   },
   "peerDependencies": {
