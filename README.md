@@ -1,4 +1,7 @@
-[![CircleCI](https://circleci.com/gh/bartlomn/react-viewstack/tree/develop.svg?style=svg)](https://circleci.com/gh/bartlomn/react-viewstack/tree/develop)
+[![CircleCI branch](https://img.shields.io/circleci/project/bartlomn/react-viewstack/develop.svg?maxAge=2592000?style=flat-square)](https://circleci.com/gh/bartlomn/react-viewstack/tree/develop)
+[![bitHound Code](https://www.bithound.io/github/bartlomn/react-viewstack/badges/code.svg)](https://www.bithound.io/github/bartlomn/react-viewstack)
+[![bitHound Dependencies](https://www.bithound.io/github/bartlomn/react-viewstack/badges/dependencies.svg)](https://www.bithound.io/github/bartlomn/react-viewstack/develop/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/bartlomn/react-viewstack/badges/devDependencies.svg)](https://www.bithound.io/github/bartlomn/react-viewstack/develop/dependencies/npm)
 
 # React ViewStack
 

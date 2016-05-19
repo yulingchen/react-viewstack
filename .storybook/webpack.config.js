@@ -1,7 +1,7 @@
 /* eslint strict: 0 */
 'use strict';
 
-const path = require('path');
+const path = require( 'path' );
 
 module.exports = {
   module: {
@@ -14,8 +14,8 @@ module.exports = {
           'postcss?sourceMap',
           'sass?sourceMap'
         ],
-        include: path.resolve(__dirname, '../')
+        include: path.resolve( __dirname, '../' )
       }
     ]
   }
-}
+};

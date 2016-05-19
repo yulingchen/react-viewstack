@@ -1,0 +1,12 @@
+{
+  "critics": {
+    "wc": {
+      "limit": 500
+    }
+  },
+  "dependencies": {
+    "unused-ignores": [
+      "babel-runtime"
+    ]
+  }
+}
